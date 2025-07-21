@@ -1,0 +1,85 @@
+      ✅ Step-by-Step:      Method Overloading Rules in Java     
+
+     Method Overloading      means defining multiple methods with the same name in a class but with      different parameter lists     .
+
+---
+
+Rule 1: Change in Number of Parameters     
+--------------------------------------------
+
+You can overload methods by changing the number of parameters.
+
+     
+void show(int a) { }           // 1 parameter
+void show(int a, int b) { }    // 2 parameters ✅ Overloaded
+     
+
+---
+
+Rule 2: Change in Data Types of Parameters     
+--------------------------------------------
+
+Methods can be overloaded by using different data types in the parameter list.
+
+     
+void show(int a) { }
+void show(double a) { }       // Different data type ✅ Overloaded
+     
+
+---
+
+Rule 3: Change in Order of Parameters     
+--------------------------------------------
+
+If the types are different, changing the      order      of parameters is allowed.
+
+     
+void show(int a, String b) { }
+void show(String b, int a) { } // ✅ Overloaded (order changed)
+     
+
+---
+
+🚫      Not Allowed: Only Return Type Change     
+--------------------------------------------
+
+You      cannot      overload a method      just by changing the return type     .
+
+     
+int show(int a) { return a; }
+// String show(int a) { return "Hi"; } ❌ Not allowed — same params
+     
+
+---
+
+Rule 4: Type Promotion (Widening)     
+--------------------------------------------
+
+Java uses type promotion to match overloaded methods.
+
+     
+void show(double a) { }
+
+show(10); // int → double — method with double will be called
+     
+
+If no exact match is found, Java promotes smaller types:
+
+* `byte → short → int → long → float → double`
+
+But      not      from:
+
+* `int → byte` (Narrowing is not automatic)
+
+---
+
+      ✅ Summary Table
+
+| Rule                        | Allowed? | Example                                  |
+| --------------------------- | -------- | ---------------------------------------- |
+| Change number of parameters | ✅ Yes    | `show(int)` vs `show(int,int)`           |
+| Change parameter types      | ✅ Yes    | `show(int)` vs `show(double)`            |
+| Change order of parameters  | ✅ Yes    | `show(int,String)` vs `show(String,int)` |
+| Change only return type     | ❌ No     | `int show(int)` vs `String show(int)`    |
+| Type promotion (widening)   | ✅ Yes    | `show(double)` called with `int`         |
+
