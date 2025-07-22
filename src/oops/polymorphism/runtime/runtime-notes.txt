@@ -1,0 +1,140 @@
+Runtime Polymorphism:-
+----------------------
+
+			
+			Person(void getBehave()---Human)
+			  |	
+   ----------------------------------------------------------------------
+   |			  |			|			|
+ Home		        School		      PublicPlace	       Org	
+   |			  |			|			|
+getBehave()		getBehave()	      getBehave()	     getBehave()		
+   |			  |			|			|
+ Child			Student		      Citizen		     Employee
+
+
+	Person person = null;
+
+	// polymoprhism object---Upcasting
+	person = new Home();
+	person.getBehave();
+-------------------------------------------------------------------------------------------------
+
+Sure Rahul! Let’s break down   method overriding rules   and   runtime polymorphism   in Java   step-by-step   with examples for clear understanding.
+
+---
+
+   🔁   Part 1: Method Overriding in Java  
+
+  Definition:  
+Method overriding occurs   when a subclass provides a specific implementation   of a method that is already defined in its superclass.
+
+---
+
+  # ✅   Rules for Method Overriding  
+
+| Rule No. | Rule Description                                                                                                       |
+| -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 1️⃣      | Method must have   same name  ,   same return type  , and   same parameter list  .                                     |
+| 2️⃣      | The method in the child class must have   same or more accessible modifier   (public > protected > default > private). |
+| 3️⃣      | Only   inherited methods   can be overridden.                                                                          |
+| 4️⃣      |   Constructors cannot be overridden.                                                                                   |
+| 5️⃣      | If the superclass method is `final`, it   cannot be overridden  .                                                      |
+| 6️⃣      | If the superclass method is `static`, it is   method hiding   not overriding.                                          |
+| 7️⃣      | If the superclass method is `private`, it is   not visible   to subclass, so cannot be overridden.                     |
+| 8️⃣      | The overriding method can throw   same or fewer/child exceptions  .                                                    |
+
+---
+
+  # 🧪   Example: Method Overriding  
+
+   java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+   
+
+  Note:   `@Override` annotation helps catch errors at compile time.
+
+---
+
+   🤖   Part 2: Runtime Polymorphism in Java  
+
+  # 💡   Definition:  
+
+Runtime polymorphism (also known as   dynamic method dispatch  ) means   the decision of which method to call is made at runtime  .
+
+---
+
+  # ✅   Key Points:  
+
+1. Achieved via   method overriding  .
+2. Requires   upcasting   (Parent class reference pointing to child class object).
+3. Helps in implementing   loose coupling and flexibility  .
+
+---
+
+  # 🧪   Example: Runtime Polymorphism  
+
+   java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class TestPolymorphism {
+    public static void main(String[] args) {
+        Animal a;          // reference of superclass
+        a = new Dog();     // upcasting
+        a.sound();         // Dog barks
+
+        a = new Cat();     // upcasting to another subclass
+        a.sound();         // Cat meows
+    }
+}
+   
+
+  Output:  
+
+   
+Dog barks
+Cat meows
+   
+
+At runtime, JVM decides which method to call   based on the object type  , not reference type.
+
+---
+
+   🔍 Summary Table
+-----------------------------------------------------
+| Concept              | Compile Time | Runtime |
+| -------------------- | ------------ | ------- |
+| Overloading          | Yes          | No      |
+| Overriding           | Yes          | Yes     |
+| Runtime Polymorphism | No           | Yes     |
+-----------------------------------------------------
+	
+	
+	
