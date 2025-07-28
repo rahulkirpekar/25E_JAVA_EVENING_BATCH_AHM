@@ -7,4 +7,9 @@ public class Home extends Person
 	{
 		System.out.println("Home---getBehave()---Child");
 	}
+	
+	public void getMovieOnTime() 
+	{
+		System.out.println("Home---getMovieOnTime()---Child");
+	}
 }

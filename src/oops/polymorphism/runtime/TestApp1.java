@@ -4,6 +4,52 @@ import java.util.Scanner;
 
 public class TestApp1 
 {
+										    // upcasting
+	public static void getResultBasedOnPlace(Person person) 
+	{
+		person.getBehave();
+		
+		if (person instanceof School) 
+		{
+			//Downcasting---instanceof---operator
+			School student = (School)person;
+			student.getResult();//C.E
+			
+		} else if (person instanceof Org) 
+		{
+			Org employee = (Org)person;
+			employee.getSalary();
+		} 
+		else if (person instanceof PublicPlace) 
+		{
+			PublicPlace citizen = (PublicPlace)person;
+			citizen.getPublicEvent();
+		}
+		else if (person instanceof Home) 
+		{
+			Home child= (Home)person;
+			child.getMovieOnTime();
+		}
+	}
+	
+//	public static void getResultBasedOnPlace(School  student) 
+//	{
+//		student.getBehave();
+//	}
+//	
+//	public static void getResultBasedOnPlace(PublicPlace citizen) 
+//	{
+//		citizen.getBehave();
+//	}
+//	
+//	public static void getResultBasedOnPlace(Home child) 
+//	{
+//		child.getBehave();
+//	}
+	
+	
+	
+	
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
@@ -19,20 +65,29 @@ public class TestApp1
 		switch (choice) 
 		{
 			case 1: // Upcasting--[Polymorphism object]
-					person = new Home();
-					person.getBehave();
+					Home home = new Home();
+					
+					getResultBasedOnPlace(home);
+					
 					break;
 					
-			case 2: person = new Org();
-					person.getBehave();
+			case 2: Org org = new Org();
+					getResultBasedOnPlace(org);
 					break;
 					
-			case 3: person = new PublicPlace();
-					person.getBehave();
+			case 3: PublicPlace citizen = new PublicPlace();
+					getResultBasedOnPlace(citizen);
 					break;
 					
-			case 4: person = new School();
-					person.getBehave();
+			case 4: 
+					// Upcasting / Polymorphic Object
+					School student = new School();
+					getResultBasedOnPlace(student);
+					
+					// Downcasting
+//					School student = (School)person;
+//					student.getResult();
+					
 					break;
 	
 		}

@@ -1,0 +1,25 @@
+Runtime Polymorphism:-
+----------------------
+
+		
+		Person(void getBehave(){...Gen Behav..})
+		  |
+  ----------------------------------------------------------
+  |		  |			|		|
+School		 Org		    PublicPlace	       Home 
+  |		  |			|		|	 	
+getResult()  getSalary()           getPublicEvent()  getMovieOntime() 
+
+getBehave()     getBehave()         getBehave()	     getBehave()	     
+  |		  |			|		|	 	
+Student		Employee	    Citizen 	     Son/Daughter
+
+
+		// upcasting
+		Person person = new School();
+
+		person.getBehave();		
+
+
+		person.getResult();//C.E	
+
