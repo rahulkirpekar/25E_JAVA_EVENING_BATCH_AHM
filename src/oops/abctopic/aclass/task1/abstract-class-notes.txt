@@ -1,0 +1,48 @@
+Abstraction:- Security ===> Application
+-------------
+			Type of Abstraction
+			-------------------
+	1. 0% to 100%				2. 100% 
+	-----------------			-----------------
+	===> Abstract class			===> interface
+	
+1. 0% to 100% Abstraction:-
+---------------------------
+
+
+	abstract class A
+	{
+		// 1. Data Members
+
+		// 2. Methods
+			//1. Abstract Methods--"Abstraction"
+
+			abstract returnType funName(arguments);
+
+			//2. Non-Abstract Methods
+
+		// 3. constructors
+	}
+
+
+Features of   abstract classes in Java:
+---------------------------------------------
+1. Declared using abstract keyword – Both class and its methods can be marked as abstract.
+2. Cannot be instantiated – You cannot create objects of an abstract class directly.
+3. Can have abstract and non-abstract methods – Abstract classes can contain a mix of methods with and without implementations.
+4. Supports constructors – Abstract classes can have constructors to initialize common fields.
+5. Can have member variables – Both static and instance variables are allowed.
+6. Can have static methods – Abstract classes can include static methods with implementations.
+7. Can have final methods – Prevents overriding in subclasses.
+8. Inheritance allowed – Must be inherited by a concrete (non-abstract) subclass to provide implementations of abstract methods.
+9. Supports access modifiers – Abstract methods can be public, protected, or package-private (not private).
+10. Single inheritance – A class can extend only one abstract class (since Java doesn't support multiple inheritance of classes).
+11. Implements interfaces – Abstract classes can implement interfaces and provide partial or full implementation.
+12. Can contain main method – Abstract classes can have a main() method and be run like a normal class.
+13. Can have any type of variables – final, static, or non-final variables are allowed.
+14. Subclasses must implement abstract methods – Unless the subclass itself is declared abstract.
+
+
+
+		
+
