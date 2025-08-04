@@ -9,7 +9,6 @@ public  class B extends A
 		no2=20;
 		System.out.println("B--Default Constructor");
 	}
-	
 	@Override
 	void test1() 
 	{
