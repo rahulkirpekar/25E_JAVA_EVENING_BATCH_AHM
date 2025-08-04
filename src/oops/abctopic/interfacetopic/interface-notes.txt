@@ -98,7 +98,7 @@ class C extends  A implements B
 features of interfaces in Java    along with    key points to remember   :
 ***************************************************************************
 
-    âœ…    Features of Interface in Java   
+   ¦    Features of Interface in Java   
           ********************************
 	
 1.    Pure Abstraction   :
@@ -113,10 +113,10 @@ features of interfaces in Java    along with    key points to remember   :
 
 3.    Method Types   :
 
-   *    Abstract methods    (without body) â€” default till Java 7.
-   *    Default methods    (with body) â€” added in Java 8.
-   *    Static methods    â€” added in Java 8.
-   *    Private methods    â€” added in Java 9 (used internally in interfaces).
+   *    Abstract methods    (without body) Ã¢â‚¬â€� default till Java 7.
+   *    Default methods    (with body) Ã¢â‚¬â€� added in Java 8.
+   *    Static methods    Ã¢â‚¬â€� added in Java 8.
+   *    Private methods    Ã¢â‚¬â€� added in Java 9 (used internally in interfaces).
 
 4.    Fields are static and final   :
 
@@ -146,7 +146,7 @@ features of interfaces in Java    along with    key points to remember   :
 
 ---
 
-    ðŸ§     Important Points to Remember   
+      Important Points to Remember   
 
 * Interface is a blueprint of a class.
 * Cannot create an object of an interface.
@@ -158,7 +158,7 @@ features of interfaces in Java    along with    key points to remember   :
 
 ---
 
-    âœ�ï¸� Example:
+    Ã¢Å“ï¿½Ã¯Â¸ï¿½ Example:
 
    java
 interface Animal {

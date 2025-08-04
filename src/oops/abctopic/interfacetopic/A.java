@@ -8,8 +8,7 @@ public interface A
 	
 	// 2. Member function
 	
-		// 1. Abstract Methods---[public abstract]
-	
+		// 1. Abstract Methods---[public abstract]	
 	public abstract void test1();// public abstract 
 	public abstract void test5();// public abstract 
 	
