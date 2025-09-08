@@ -9,12 +9,13 @@ public class TestApp3
 {
 	public static void main(String[] args) 
 	{
-		try 
-		{
-			FileInputStream fin = new FileInputStream("C:\\Users\\Royal\\eclipse-workspace\\25E_JAVA_EVENING_BATCH_AHM\\src\\iotopic\\byteorientedway\\TestApp2.java");
-		
-			FileOutputStream fout = new FileOutputStream("TestApp2Dup.java");
-		
+		// AutoClosable Resource
+		try(
+				FileInputStream fin = new FileInputStream("C:\\Users\\Royal\\eclipse-workspace\\25E_JAVA_EVENING_BATCH_AHM\\src\\iotopic\\byteorientedway\\TestApp2.java");
+				
+				FileOutputStream fout = new FileOutputStream("TestApp2Dup.java");
+		   ) 
+		{		
 			int temp;
 			
 			while(	(temp = fin.read())	!= -1) 
@@ -23,9 +24,7 @@ public class TestApp3
 				
 				fout.write(temp);
 			}
-			fin.close();
-			fout.close();
-		
+			System.out.println("success");
 		} catch (FileNotFoundException e) 
 		{
 			e.printStackTrace();
