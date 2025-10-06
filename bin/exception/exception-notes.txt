@@ -1,0 +1,67 @@
+		
+				Type of Exception
+				------------------
+	1. checked Exception			2. Un-checked Exception
+	---------------------			---------------------
+	CompileTime--Compiler			Runtime Exception---JVM
+
+
+				Hierarchy of Exception
+				-----------------------
+		
+				Throwable(c)
+				   |
+				Exception(c)
+				   |
+		---------------------------------------------------------
+		|--checked						|--UnChecked
+1. IOException							[RuntimeException(C)]	
+2. SQLException						1.ArrayIndexOutofBoundException 
+3. FileNotFoundException				2.StringIndexOutofBoundException	
+4. ClassNotFoundException				3.NullpointerException
+							4.NumberFormatException
+....							5.ClassclassException
+							,...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
