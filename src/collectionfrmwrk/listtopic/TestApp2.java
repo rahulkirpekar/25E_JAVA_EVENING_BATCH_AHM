@@ -10,11 +10,48 @@ public class TestApp2
 	{
 		ArrayList<String>list = new ArrayList<String>();
 		
-		list.add("rahul");
-		list.add("ankur");
-		list.add("sagar");
-		list.add("brijesh");
-		list.add("vishv");
+		list.add("rahul");//0
+		list.add("ankur");//1
+		list.add("sagar");//2
+		list.add("brijesh");//3
+		list.add("vishv");//4
+
+		ListIterator<String> itr = list.listIterator();
+		
+		while(itr.hasNext()) 
+		{
+			String name = itr.next();
+			System.out.println(name);
+		}
+		System.out.println("--------------------------------------");
+		
+		// remove
+//		list.remove(2);// index
+//		list.remove("sagar");// valueBased
+		
+		
+		// Update
+		list.set(2, "Ganesh");
+		
+		
+		itr = list.listIterator();
+		
+		while(itr.hasNext()) 
+		{
+			String name = itr.next();
+			System.out.println(name);
+		}
+		System.out.println("--------------------------------------");
+		
+		
+		
+		
+		// update
+		
+	
+		
+		
+		
 /*		
 		Iterator<String> itr = list.iterator();
 		while(itr.hasNext()) 
@@ -25,19 +62,19 @@ public class TestApp2
 */	
 		// ListIterator---[forward + Backup iterate]
 		//---------------------------------------------
-		ListIterator<String> itr = list.listIterator();
-		
-		while(itr.hasNext()) 
-		{
-			String name = itr.next();
-			System.out.println(name);
-		}
-		System.out.println("--------------------------------------");
-		
-		while(itr.hasPrevious()) 
-		{
-			String name = itr.previous();
-			System.out.println(name);
-		}
+//		ListIterator<String> itr = list.listIterator();
+//		
+//		while(itr.hasNext()) 
+//		{
+//			String name = itr.next();
+//			System.out.println(name);
+//		}
+//		System.out.println("--------------------------------------");
+//		
+//		while(itr.hasPrevious()) 
+//		{
+//			String name = itr.previous();
+//			System.out.println(name);
+//		}
 	}
 }
