@@ -1,0 +1,9 @@
+		Ways to Write/Read Data in File
+		---------------------------------
+	1. Byteoriented Way		2.Character orientedway(String)
+	---------------------		------------------------------
+String-Data   Yes				Yes
+	
+write---FileOutputStream		FileWriter		
+read---FileInputStream			FileReader	
+
