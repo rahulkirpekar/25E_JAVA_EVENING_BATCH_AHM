@@ -1,0 +1,29 @@
+MYSQL Database Credentials:-
+----------------------------
+src
+ |
+ ---jdbctopic
+        |
+       com
+        |
+	--bean
+	--dao
+	--util
+-------------------------------------------------
+
+	1. URLNAME = "jdbc:mysql://localhost:3306/evebatch24";
+	2. DRIVERCLASS = "com.mysql.jdbc.cj.Driver";
+	3. USERNAME = "root";
+	4. PASSWORD = "root";
+
+     Driver.class     Driver.class    Driver.class     Driver.class	
+	 |		  |		  |		   |	
+ mysql-connector.jar    odbc.jar         *.jar            *.jar
+	 |		  |		  |		   |	
+	MySQL		Oracle		PostGress	MS-SQLServer	
+-------------------------------------------------	
+1.show databases
+2. create database evebatch24;
+3. use evebatch24;
+
+	

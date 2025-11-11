@@ -1,0 +1,50 @@
+CREATE TABLE student
+(
+	id int AUTO_INCREMENT primary key,
+	name varchar(50),
+	std int,
+	marks int
+);
+
+
+DAO---Data Access Object
+--------------------------
+	Student(Table)---StudentDao(Java Class)
+	Product(Table)---ProductDao(Java Class)	
+	Employee(Table)--EmployeeDao(Java Class)
+
+
+
+
+1. Statement
+
+
+int executeUpdate()    executeQuery()---ResultSet	
+	  |		 |
+	insert		select
+	update
+	delete
+
+
+
+2. PreparedStatement	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
