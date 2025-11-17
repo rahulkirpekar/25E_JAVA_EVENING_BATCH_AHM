@@ -48,14 +48,61 @@ public class StudentDao
 	}
 	
 	// Update
-	public void updateStudent() 
+	public int updateStudent(StudentBean s,int id) 
 	{
-
+		String updateQuery = "UPDATE student SET name='"+s.getName()+"',std="+s.getStd()+",marks="+s.getMarks()+" WHERE id="+id;
+		
+		System.out.println("updateQuery : " + updateQuery);
+		Connection conn = DBConnection.getConnection();
+		Statement stmt = null;
+		int rowsAffected = 0;
+		if (conn!=null) 
+		{
+			try 
+			{
+				stmt = conn.createStatement();
+				
+				rowsAffected = stmt.executeUpdate(updateQuery);
+			
+			} catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+			
+		} else 
+		{
+			System.out.println("StudentDao---updateStudent()---Db not connected");
+		}
+		return rowsAffected;
 	}
 	// Delete
-	public void deleteStudent() 
-	{
 
+	public int deleteStudent(int id) 
+	{
+		String deleteQuery = "DELETE FROM student WHERE id="+id;
+		System.out.println("deleteQuery : " + deleteQuery);
+		
+		Connection conn = DBConnection.getConnection();
+		Statement stmt =null;
+		int rowsAffected = 0;
+		if (conn != null) 
+		{
+			try 
+			{
+				stmt =conn.createStatement();
+				
+				rowsAffected = stmt.executeUpdate(deleteQuery);
+			
+			} catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+			
+		} else 
+		{
+			System.out.println("StudentDao---deleteStudent()----Db not connected");
+		}
+		return rowsAffected;
 	}
 	// SELECT
 	public void getAllStudents() 
@@ -65,6 +112,12 @@ public class StudentDao
 	public static void main(String[] args)
 	{
 		Scanner sc = new Scanner(System.in);
+
+		
+		//-------------------Update Student-----------------
+		System.out.println("Enter Rno Which You want to Update Student : ");
+		int id = sc.nextInt();
+		sc.nextLine();
 		
 		System.out.println("Enter Name : ");
 		String name = sc.nextLine();
@@ -73,7 +126,45 @@ public class StudentDao
 		System.out.println("Enter Marks : ");
 		int marks = sc.nextInt();
 
+		StudentBean s = new StudentBean(0, name, std, marks);
 		
+		StudentDao dao = new StudentDao();
+		
+		int rowsAffected = dao.updateStudent(s,id);
+		
+		if (rowsAffected > 0) 
+		{
+			System.out.println("Student record successfully Updated : " + rowsAffected);
+		} else 
+		{
+			System.out.println("Student record not Updated : " + rowsAffected);
+		}
+		
+/*		
+		//-------------------Delete Student-----------------
+		System.out.println("Enter Rno Which You want to Delete Student : ");
+		int rno = sc.nextInt();
+
+		StudentDao dao = new StudentDao();
+		
+		int rowsAffected = dao.deleteStudent(rno);
+		
+		if (rowsAffected > 0) 
+		{
+			System.out.println("Student record successfully Deleted : " + rowsAffected);
+		} else 
+		{
+			System.out.println("Student record not Deleted : " + rowsAffected);
+		}
+		
+		//-------------------Insert Student-----------------
+   		System.out.println("Enter Name : ");
+		String name = sc.nextLine();
+		System.out.println("Enter Std : ");
+		int std = sc.nextInt();
+		System.out.println("Enter Marks : ");
+		int marks = sc.nextInt();
+
 		StudentBean s = new StudentBean(0, name, std, marks);
 		
 		StudentDao dao = new StudentDao();
@@ -87,5 +178,6 @@ public class StudentDao
 		{
 			System.out.println("Student record not Inserted : " + rowsAffected);
 		}
+*/		
 	}
 }
