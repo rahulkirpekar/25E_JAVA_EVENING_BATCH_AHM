@@ -18,7 +18,7 @@ public class StudentDao
 		
 		Statement stmt = null;
 		// 1. Create SQL Query
-		String insertStudentQuery = "INSERT INTO student(name,std,marks) VALUES ('"+ s.getName() +"',"+ s.getStd() +","+s.getStd()+")";
+		String insertStudentQuery = "INSERT INTO student(name,std,marks) VALUES ('"+ s.getName() +"',"+ s.getStd() +","+s.getMarks()+")";
 		
 		System.out.println("insertStudentQuery : " + insertStudentQuery);
 		
