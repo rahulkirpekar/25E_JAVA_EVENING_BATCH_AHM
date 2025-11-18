@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class DBConnection 
 {
 	// 1. Make Credentials
@@ -12,10 +13,10 @@ public class DBConnection
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "root";
 	
+	private static Connection conn = null;
 	// 2. getConnection Method
-	public static Connection getConnection() 
+	private static Connection getConnection() 
 	{
-		Connection conn = null;
 		try 
 		{
 			// 3. Load Driver Class
@@ -41,14 +42,17 @@ public class DBConnection
 		}
 		return conn;
 	}
-	
-	public static void main(String[] args) 
+	private DBConnection() 
 	{
-		Connection conn = DBConnection.getConnection();
-		
-		
-		System.out.println("Main  Conn : " + conn);
-		
-		
+	} 
+	// Apply Singleton Design Pattern
+	public static Connection getDBInstance() 
+	{
+		if(conn == null) 
+		{
+			conn = DBConnection.getConnection();	
+		}
+		return conn;
 	}
+	
 }
